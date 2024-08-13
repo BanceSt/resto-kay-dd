@@ -14,7 +14,7 @@
         <div class="flex flex-wrap items-center justify-between w-full p-4">
             <a href="" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
-                <span class="self-center text-2xl font-bold text-gray-100 whitespace-nowrap dark:text-white">{{str_replace("_", " ", config("app.name"))}}</span>
+                <span class="self-center text-2xl font-bold text-gray-100 whitespace-nowrap">{{str_replace("_", " ", config("app.name"))}}</span>
             </a>
             <button onclick="window.location='{{route('reservation')}}'" class="text-white bg-green-700 text-2xl hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full px-5 py-1.5 text-center me-2 mb-2">
                 RESERVATION
