@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("client_id");
-            $table->timestamp("reserved_at");
-            $table->integer("numero_table");
+            $table->timestamp("reserved_at")->nullable();
+            $table->text("numero_table");
             $table->integer("party_size");
-            $table->text("specials_need");
+            $table->text("specials_need")->nullable();
             $table->timestamps();
 
             $table->foreign("client_id")->references("id")->on("clients");

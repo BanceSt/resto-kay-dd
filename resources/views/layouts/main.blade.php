@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(['resources/css/app.css','resources/js/app.js'])
+    @livewireStyles
+    <script src="https://kit.fontawesome.com/89eaa3121d.js" crossorigin="anonymous"></script>
     <title>@yield("title", "Acceuil")</title>
 </head>
 <body>
@@ -20,6 +22,6 @@
         </div>
     </nav>
     @yield("center")
-
+    @livewireScripts
 </body>
 </html>

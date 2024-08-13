@@ -24,4 +24,11 @@ class Reservation extends Model
     {
         return $this->belongsTo(Client::class);
     }
+
+    protected function casts(): array
+    {
+        return [
+            'numero_table' => 'array',
+        ];
+    }
 }
