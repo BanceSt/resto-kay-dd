@@ -8,7 +8,8 @@
             RESERVATION   #000
         </div>
 
-        <form action="bg-green-300">
+        <form action="{{route('reservation.add')}}" method="POST">
+        @csrf <!-- {{ csrf_field() }} -->
         <div class="bg-green-300 pb-2">
         <div class="grid gap-6 mb-6 pb-2 grid-cols-2">
             <div class="ps-1">
@@ -27,7 +28,7 @@
             </div>
             <div class="pe-1">
                 <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number</label>
-                <input type="tel" name="phone" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
+                <input type="text" name="phone" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="123-45-678" required />
             </div>
 
             {{-- date réservation --}}
@@ -68,7 +69,7 @@
         </div>
 
         <div class="flex flex-row pt-2 items-end pe-1 justify-end flex-end">
-            <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"> Envoyer </button>
+            <button type="submit" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"> Envoyer </button>
         </div>
     </div>
         </form>
