@@ -20,9 +20,9 @@ class Reservation extends Model
         "specials_need"
     ];
 
-    public function client() : BelongsTo
+    public function users() : BelongsTo
     {
-        return $this->belongsTo(Client::class);
+        return $this->belongsTo(User::class);
     }
 
     protected function casts(): array

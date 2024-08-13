@@ -11,6 +11,8 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+
+
     /**
      * The attributes that are mass assignable.
      *
@@ -18,8 +20,10 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'last_name',
         'email',
         'password',
+        "phone"
     ];
 
     /**
@@ -30,6 +34,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'phone'
     ];
 
     /**
@@ -42,6 +47,12 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'phone' => 'hashed',
         ];
+    }
+
+    public function reservation() : HasMany
+    {
+        return $this->hasMany(Reservation::class);
     }
 }
