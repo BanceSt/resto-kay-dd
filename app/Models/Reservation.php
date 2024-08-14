@@ -13,10 +13,9 @@ class Reservation extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        "client_id",
+        "user_id",
         "reserved_at",
         "numero_table",
-        "party_size",
         "specials_need"
     ];
 

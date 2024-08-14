@@ -16,7 +16,6 @@ return new class extends Migration
             $table->unsignedBigInteger("user_id");
             $table->timestamp("reserved_at")->nullable();
             $table->text("numero_table");
-            $table->integer("party_size");
             $table->text("specials_need")->nullable();
             $table->timestamps();
 

@@ -15,10 +15,7 @@
                     <i class="fa-solid fa-xmark"></i>
                 </button>
                 @endif
-
-
             </div>
-
         </div>
        </div>
     @endfor
