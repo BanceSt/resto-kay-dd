@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('password');
             $table->string("phone")->nullable();
             $table->rememberToken();
+            $table->enum("role", ["normal", 'admin'])->default('normal');
             $table->timestamps();
         });
 
