@@ -16,7 +16,12 @@ class Reservation extends Model
         "user_id",
         "reserved_at",
         "numero_table",
-        "specials_need"
+        "specials_need",
+        'name',
+        'last_name',
+        'email',
+        'password',
+        'phone'
     ];
 
     public function users() : BelongsTo

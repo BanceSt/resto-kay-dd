@@ -13,6 +13,11 @@ class ReservationController extends Controller
         $reservation = new Reservation;
         if (auth()->check()) {
             $reservation->user_id = Auth::id();
+        } else {
+            $reservation->name = $request->first_name;
+            $reservation->last_name = $request->last_name;
+            $reservation->email = $request->email;
+            $reservation->phone = $request->phone;
         }
 
         //reservé le
@@ -38,7 +43,7 @@ class ReservationController extends Controller
         $reservation->specials_need = $request->message;
         $reservation->save();
 
-        return dd($reservation);
+        return view('/');
     }
 
 }
