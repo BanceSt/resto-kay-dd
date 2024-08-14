@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
             'last_name' => 'Poire',
             'phone' => '0123456789',
             'email' => 'test@e.com',
-            'password' => '123456789',
+            'password' => '123456589',
             'role' => "admin"
         ]);
     }
