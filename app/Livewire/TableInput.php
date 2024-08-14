@@ -10,14 +10,17 @@ class TableInput extends Component
     public $n_tables = 1;
 
     public function add_table() {
+
         if ($this->limit >= ($this->n_tables + 1))
         {
             $this->n_tables++;
         }
     }
 
-    public function sup_table() {
-        $this->n_tables--;
+    public function suppr_table() {
+        if ($this->n_tables > 1) {
+            $this->n_tables--;
+        }
     }
 
     public function render()
