@@ -13,6 +13,10 @@ class ReservationController extends Controller
         $reservation = new Reservation;
         if (auth()->check()) {
             $reservation->user_id = Auth::id();
+            $reservation->name = auth()->user()->name;
+            $reservation->last_name = auth()->user()->last_name;
+            $reservation->email = auth()->user()->email;
+            $reservation->phone = auth()->user()->phone;
         } else {
             $reservation->name = $request->first_name;
             $reservation->last_name = $request->last_name;
