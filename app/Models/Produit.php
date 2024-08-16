@@ -30,4 +30,9 @@ class Produit extends Model
     {
         return $this->HasMany(HasTag::class);
     }
+
+    public function commandProduit() : HasMany
+    {
+        return $this->HasMany(CommandProduit::class);
+    }
 }
