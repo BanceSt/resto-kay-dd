@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReservationController;
+use App\Models\Produit;
 use Illuminate\Support\Facades\Route;
 
 
@@ -24,6 +25,10 @@ Route::prefix("/contact")->name("contact")->group(function(){
     });
 
     Route::post("/add", [ContactController::class, "create"])->name(".add");
+});
+
+Route::get("/test", function (){
+    return Produit::find(1)->tag;
 });
 
 

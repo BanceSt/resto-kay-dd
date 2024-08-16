@@ -39,5 +39,11 @@ class DatabaseSeeder extends Seeder
         Contact::factory(20)->create();
 
         Reservation::factory(20)->create();
+
+        $this->call([
+            TagSeeder::class,
+            ProduitSeeder::class,
+            HasTagSeeder::class,
+        ]);
     }
 }

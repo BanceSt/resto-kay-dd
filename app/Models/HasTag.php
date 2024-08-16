@@ -21,6 +21,12 @@ class HasTag extends Model
         'tag_id'
     ];
 
+    public function getKeyName()
+    {
+    return ['produit_id', 'tag_id'];
+    }
+
+
     public function produit() : BelongsTo
     {
         return $this->belongsTo(Produit::class);
