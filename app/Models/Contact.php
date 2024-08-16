@@ -13,6 +13,7 @@ class Contact extends Model
         "user_id",
         "name",
         "last_name",
+        "email",
         "objet",
         "message",
         "respond",

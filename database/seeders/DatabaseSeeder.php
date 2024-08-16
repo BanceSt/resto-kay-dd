@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Contact;
+use App\Models\Reservation;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -31,5 +33,11 @@ class DatabaseSeeder extends Seeder
             'password' => '123456789',
             'role' => "admin"
         ]);
+
+        User::factory(10)->create();
+
+        Contact::factory(20)->create();
+
+        Reservation::factory(20)->create();
     }
 }

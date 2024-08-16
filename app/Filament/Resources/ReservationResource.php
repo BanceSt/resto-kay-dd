@@ -43,6 +43,37 @@ class ReservationResource extends Resource
                     'User' => 'success',
                     'Invite' => 'warning',
                 }),
+
+                TextColumn::make('name')
+                ->label('Prénom')
+                ->sortable()
+                ->searchable(),
+
+                TextColumn::make('last_name')
+                ->label('Nom')
+                ->sortable()
+                ->searchable(),
+
+                TextColumn::make('email')
+                ->sortable()
+                ->searchable(),
+
+                TextColumn::make('phone')
+                ->sortable()
+                ->searchable(),
+
+                TextColumn::make('specials_need')
+                ->sortable()
+                ->searchable()
+                ->limit(10),
+
+                TextColumn::make("numero_table")
+                ->label('Party size'),
+
+
+
+                TextColumn::make("reserved_at")
+                ->label('Réservé le'),
             ])
             ->filters([
                 //
