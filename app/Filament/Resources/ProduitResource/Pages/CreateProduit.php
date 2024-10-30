@@ -8,5 +8,13 @@ use Filament\Resources\Pages\CreateRecord;
 
 class CreateProduit extends CreateRecord
 {
+    public $tagSaver;
     protected static string $resource = ProduitResource::class;
+
+    protected function getRedirectUrl(): string
+    {
+    return $this->getResource()::getUrl('index');
+    }
+
+
 }

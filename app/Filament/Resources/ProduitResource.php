@@ -5,8 +5,10 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ProduitResource\Pages;
 use App\Filament\Resources\ProduitResource\RelationManagers;
 use App\Models\Produit;
+use App\Models\Tag;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -42,6 +44,10 @@ class ProduitResource extends Resource
                     ->inputMode('decimal')
                     ->label("prix"),
 
+                Select::make("categories")
+                    ->multiple()
+                    ->options(Tag::all()->pluck("name")),
+
                 FileUpload::make("img")
                     ->image()
                     ->label("image")
@@ -66,7 +72,10 @@ class ProduitResource extends Resource
                     ->money("EUR"),
 
                 TextColumn::make("Categories")
-                    ,
+                    ->state(function ($record) {
+
+                        return $record->tags->pluck("name");
+                    }),
 
                 ImageColumn::make("img")
                     ->square()

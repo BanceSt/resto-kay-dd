@@ -28,7 +28,7 @@ Route::prefix("/contact")->name("contact")->group(function(){
 });
 
 Route::get("/test", function (){
-    return Produit::find(1)->tag;
+    return Produit::find(1)->tags->pluck("name");
 });
 
 
